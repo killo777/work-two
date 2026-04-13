@@ -1,0 +1,22 @@
+@startuml 图书角管理系统-用例图
+left to right direction
+actor "用户" as User
+actor "管理员" as Admin
+
+rectangle "图书角管理系统" {
+  ' 用户功能
+  User --> (登录)
+  User --> (搜索图书)
+  User --> (借阅图书)
+  User --> (归还图书)
+  User --> (查看个人借阅记录)
+
+  ' 管理员功能
+  Admin --> (登录)
+  Admin --> (图书信息录入)
+  Admin --> (修改图书信息)
+  Admin --> (删除图书)
+  Admin --> (查看所有借阅记录)
+  Admin --> (管理用户)
+}
+@enduml
