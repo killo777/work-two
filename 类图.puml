@@ -1,0 +1,34 @@
+@startuml 图书角管理系统-类图
+' 图书类
+class 图书 {
+  - bookId: int
+  - bookName: String
+  - author: String
+  - publisher: String
+  - status: String
+  + getInfo()
+}
+
+' 用户类
+class 用户 {
+  - userId: int
+  - userName: String
+  - password: String
+  - phone: String
+  + login()
+  + borrowBook()
+  + returnBook()
+}
+
+' 借阅记录类
+class 借阅记录 {
+  - recordId: int
+  - borrowDate: Date
+  - returnDate: Date
+  - status: String
+}
+
+' 关系：一对多
+用户 "1" -- "*" 借阅记录 : 生成
+图书 "1" -- "*" 借阅记录 : 产生
+@enduml
